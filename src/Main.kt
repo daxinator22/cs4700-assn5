@@ -41,7 +41,7 @@ fun main(args: Array<String>) {
     println()
 
     // primeNumbers tests
-    /*val primesUpToN = primeNumbers(n)
+    val primesUpToN = primeNumbers(n)
     println("primeNumbers to $n are $primesUpToN")
     val primesUpToZero = primeNumbers(zero)
     println("primeNumbers to $zero are $primesUpToZero")
@@ -70,7 +70,7 @@ fun main(args: Array<String>) {
     println()
 
     // listApply tests
-    println("listApply of ::add to $countingNumbersUpToN is ${listApply(::add,subLists(countingNumbersUpToN))}")
+    /*println("listApply of ::add to $countingNumbersUpToN is ${listApply(::add,subLists(countingNumbersUpToN))}")
     println("listApply of ::add to $countingNumbersZero is ${listApply(::add,subLists(countingNumbersZero))}")
     println("listApply of ::add to $countingNumbersNull is ${listApply(::add,subLists(countingNumbersNull))}")
     println()

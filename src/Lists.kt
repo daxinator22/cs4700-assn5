@@ -66,3 +66,88 @@ fun countingNumbers(limit : Int?) : List<Int>? {
     return numList;
 }
 
+fun evenNumbers(size : Int?) : List<Int>? {
+
+    if(size == null)
+        return null;
+
+    val numList : MutableList<Int> = mutableListOf();
+
+    var i : Int = 1;
+    while(numList.size < size){
+        if(i % 2 == 0)
+            numList.add(i);
+        i += 1;
+    }
+
+    return numList;
+}
+
+fun primeNumbers(size : Int?) : List<Int>? {
+    if(size == null)
+        return null;
+
+    val numList : MutableList<Int> = mutableListOf();
+
+    var i : Int = 1;
+    while(numList.size < size){
+        if(isPrime(i))
+            numList.add(i);
+        i += 1;
+    }
+
+    return numList;
+}
+
+fun subLists(elements : List<Int>?) : List<List<Int>>? {
+    if(elements == null)
+        return null;
+
+    val lists : MutableList<List<Int>> = mutableListOf();
+
+    for(i in 0 until elements.size - 1){
+        lists.add(elements.slice(0..i));
+    }
+
+    return lists;
+}
+
+fun countElements(lists : List<List<Int>?>?) : Int? {
+    if(lists == null)
+        return 0
+
+    var count = 0;
+
+    for(list in lists){
+        if(list == null){
+            count += 0;
+        }
+        else{
+            count += list.size;
+        }
+    }
+
+    return count;
+}
+
+fun<T : Comparable<T>> merge(a : List<T>?, b : List<T>?) : List<T>? {
+    if(a == null || b == null)
+        return null;
+
+    var merged : MutableList<T> = mutableListOf();
+
+    var aIndex = 0;
+    var bIndex = 0;
+    while(aIndex < a.size - 1 || bIndex < b.size - 1){
+        if(bIndex >= b.size || a.elementAt(aIndex).compareTo(b.elementAt(bIndex)) < 0){
+            merged.add(a.elementAt(aIndex));
+            aIndex += 1;
+        }
+        else if (aIndex >= a.size || a.elementAt(aIndex).compareTo(b.elementAt(bIndex)) >= 0){
+            merged.add(b.elementAt(bIndex));
+            bIndex += 1;
+        }
+    }
+
+    return merged;
+}
